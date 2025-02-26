@@ -1,5 +1,11 @@
 import java.util.Scanner;
-
+/*
+Input
+s =
+"A man, a plan, a canal: Panama"
+Output
+true
+*/
 class Solution
 {
     public boolean isPalindrome(String x) 
