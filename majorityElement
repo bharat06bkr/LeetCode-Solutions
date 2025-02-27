@@ -12,7 +12,7 @@ class Solution
             map.put(nums[i],map.get(nums[i])+1);
         else
             map.put(nums[i],1);
-       }
+       {
        ArrayList<Object> al=new ArrayList<Object>(map.entrySet());
        int max=0;
        int ele=0;
