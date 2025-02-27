@@ -1,0 +1,15 @@
+import java.util.*;
+
+class Solution {
+    public int mySqrt(int x) 
+    {
+        double a=Math.sqrt(x);
+         return (int)Math.floor(a);
+       
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(new Solution().mySqrt(sc.nextInt()));
+    }
+}
