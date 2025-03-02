@@ -1,0 +1,39 @@
+import java.util.*;
+import java.util.Map.Entry;
+
+class Solution 
+{
+    public int singleNumber(int[] nums) 
+    {
+        HashMap<Integer,Integer> map=new HashMap<Integer,Integer>();
+        for(int i=0;i<nums.length;i++)
+        {
+            if(map.containsKey(nums[i]))
+                map.put(nums[i],map.get(nums[i])+1);
+            else
+                map.put(nums[i],1);
+        }
+        ArrayList<Object> al=new ArrayList<Object>(map.entrySet());
+        Iterator<Object> i=al.iterator();
+        while(i.hasNext())
+        {
+            Entry e=(Entry)i.next();
+            int ele=(Integer)e.getKey();
+            int pos=(Integer)e.getValue();
+            if(pos==1)
+                return ele;
+        }
+        return 1;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        Solution obj=new Solution();
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        arr[i]=sc.nextInt();
+        int result=obj.singleNumber(arr);
+        System.out.println(result);
+    }
+}
