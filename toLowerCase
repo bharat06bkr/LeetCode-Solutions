@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class Solution 
+{
+    public static String toLowerCase(String s) 
+    {
+        s=s.toLowerCase();
+        return s;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(toLowerCase(sc.next()));
+    }
+}
