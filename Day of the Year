@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class Solution 
+{
+    public static int dayOfYear(String date) 
+    {
+        String arr[]=date.split("-");
+        int days=getDays(arr[0],arr[1]);
+        days=days+Integer.parseInt(arr[2]);
+        return days;
+    }
+    static int getDays(String year,String month)
+    {
+        int a=Integer.parseInt(year);
+        int b=Integer.parseInt(month);
+        System.out.println(a+" "+b);
+        if((a%400 == 0) || (a%100!=0 && a%4==0))
+        {
+            int day[]={0,31,60,91,121,152,182,213,244,274,305,335};
+            return day[b-1];
+        }
+        else
+        {
+            int day[]={0,31,59,90,120,151,181,212,243,273,304,334};
+            return day[b-1];
+        }
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(dayOfYear(sc.next()));
+    }
+}
