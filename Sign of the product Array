@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class Solution 
+{
+    public static int arraySign(int[] nums) 
+    {
+        java.util.Arrays.sort(nums);
+        int count=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>=1)
+                break;
+            if(nums[i]==0)
+                return 0;
+            if(nums[i]<0)
+                count++;
+        }
+        return (count%2==0)? 1:-1;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+            arr[i]=sc.nextInt();
+        System.out.println(arraySign(arr));
+    }
+}
