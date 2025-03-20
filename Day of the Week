@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class Solution 
+{
+    public static String dayOfTheWeek(int day, int month, int year) 
+    {
+        String s[]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};         
+        int days=getDays(year,month);
+        year--;
+        days=days+day;
+        days += (year + (year / 4) - (year / 100) + (year / 400)) % 7;
+        System.out.println(days);
+        return s[days%7];
+    }
+    static int getDays(int year,int month)
+    {
+        if((year%400 == 0) || (year%100!=0 && year%4==0))
+        {
+            int day[]={0,31,60,91,121,152,182,213,244,274,305,335};
+            return day[month-1];
+        }
+        else
+        {
+            int day[]={0,31,59,90,120,151,181,212,243,273,304,334};
+            return day[month-1];
+        }
+    }
+    public static void main(String [] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(dayOfTheWeek(sc.nextInt(),sc.nextInt(),sc.nextInt()));
+    }
+}
