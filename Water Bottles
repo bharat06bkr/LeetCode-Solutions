@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Solution 
+{
+    public static int numWaterBottles(int numBottles, int numExchange) 
+    {
+        int new_bottles=0;
+        int n=numBottles;
+        while(n>=numExchange)
+        {
+            new_bottles=n/numExchange;
+            numBottles=numBottles+new_bottles;
+            n=n%numExchange+new_bottles;
+        }
+        System.out.println(n);
+        return numBottles;
+    }
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(numWaterBottles(sc.nextInt(),sc.nextInt()));
+    }
+}
